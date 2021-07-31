@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
-app.use(express.static('resources'))
+app.use(express.static(path.join(__dirname, 'resources')))
 app.use(express.json())
 app.use(cors())
 const fs = require('fs')
