@@ -1,26 +1,26 @@
 {
   "name": "vaccine-backend",
   "version": "1.0.0",
-  "description": "Backend for vaccination data",
+  "description": "",
   "main": "expressReader.js",
-  "scripts": {
-    "start": "nodemon expressReader.js",
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GitHenrik/vaccine-backend.git"
-  },
-  "author": "Henrik Tarnanen",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/GitHenrik/vaccine-backend/issues"
-  },
-  "homepage": "https://github.com/GitHenrik/vaccine-backend#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "nodemon": "^2.0.12"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "nodemon expressReader.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GitHenrik/vaccination-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GitHenrik/vaccination-backend/issues"
+  },
+  "homepage": "https://github.com/GitHenrik/vaccination-backend#readme"
 }
