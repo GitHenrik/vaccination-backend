@@ -1,6 +1,8 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
+app.use(express.static('resources'))
+app.use(express.json())
 app.use(cors())
 const fs = require('fs')
 const readline = require('readline')
@@ -37,11 +39,21 @@ app.get('/:resource/:id', async (req, res) => {
   res.send(singleVaccination)
 })
 
-app.use((req, res, next) => {
-  res.status(404).send({ error: 'unknown endpoint' })
-})
-
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}...`)
 })
+
+//error handling
+const errorHandler = (error, req, res, next) => {
+  console.log('Error: ', error.name)
+  console.log(error.message)
+  next(error)
+}
+app.use(errorHandler)
+
+//unknown endpoint
+const unknownEndpoint = (req, res) => {
+  res.status(404).send({ error: 'Unknown endpoint' })
+}
+app.use(unknownEndpoint)
